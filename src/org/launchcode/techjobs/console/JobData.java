@@ -69,14 +69,14 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
+        value = value.toLowerCase(); //make case insensitive;
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value)) { //make search case insensitive
                 jobs.add(row);
             }
         }

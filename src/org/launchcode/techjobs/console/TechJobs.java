@@ -58,7 +58,7 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term: ");
-                String searchTerm = in.nextLine();
+                String searchTerm = in.nextLine().toLowerCase();//made search term case insensitive
 
                 if (searchField.equals("all")) {
                     System.out.println("Search all fields not yet implemented.");
