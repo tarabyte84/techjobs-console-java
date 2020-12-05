@@ -110,6 +110,10 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        //print message if there are no jobs that fit searchTerm
+        if (someJobs.isEmpty()) {
+            System.out.println("No jobs fit the entered criteria.");
+        }
         //iterate over ArrayList
         for (HashMap<String, String> hashMap : someJobs) {
             System.out.println("\n*****");
