@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -125,10 +126,28 @@ public class JobData {
         }
     }
 
-    public static void findByValue() {
+    public static ArrayList <HashMap<String, String>> findByValue (String searchTerm) {
+//         load data, if not already loaded
+        loadData();
+        searchTerm = searchTerm.toLowerCase(); //make case insensitive;
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
+        for (HashMap<String, String> job : allJobs) {
 
-
+            for (String key : job.keySet()) {
+                String aValue = job.get(key).toLowerCase();
+                if (aValue.contains(searchTerm)) {
+                    jobs.add(job);
+                    break;
+                }
+            }
+        }
+        return jobs;
     }
 
+
+
+
 }
+
+
