@@ -116,15 +116,16 @@ public class TechJobs {
         //print message if there are no jobs that fit searchTerm
         if (someJobs.isEmpty()) {
             System.out.println("No jobs fit the entered criteria.");
-        }
-        //iterate over ArrayList
-        for (HashMap<String, String> hashMap : someJobs) {
-            System.out.println("\n*****");
-            //print key/value pairs for each job
-            for (String key : hashMap.keySet()) {
-                System.out.println(key+ ": " +hashMap.get(key));
+        } else {
+            //iterate over ArrayList
+            for (HashMap<String, String> hashMap : someJobs) {
+                System.out.println("\n*****");
+                //print key/value pairs for each job
+                for (String key : hashMap.keySet()) {
+                    System.out.println(key + ": " + hashMap.get(key));
+                }
+                System.out.println("*****");
             }
-            System.out.println("*****");
         }
     }
 }
